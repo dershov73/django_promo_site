@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About Me |  Об организации
+{% endblock %}
+
+{% block nav %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">About</span> Me
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="http://127.0.0.1:8000">На главную</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+
+                <h2>{{ org.name }}</h2>
+
+                <ul class="about-list">
+                    <li><span>Регион:</span> {{ org.region }}</li>
+                    <li><span>ИНН:</span> {{ org.tax_id }}</li>
+                    {% if work.site != '' %}
+                        <li><span>Сайт:</span> <a href="http://{{ org.site }}" target="_blank">{{ org.site }}</a></li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

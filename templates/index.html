@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About Me | Денис Ершов
+{% endblock %}
+
+
+{% block nav %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Меню <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">About</span> Me
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Обо мне</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Учеба</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Работа</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+{% endblock %}
+
+{% block header %}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading" style="margin: 50px auto 0;">{{ name|title }} {{ surname|title }}</h1>
+                        <p class="intro-text">{{ description_1 }}
+                            <br>{{ description_2 }}
+                        </p>
+                        <a><img src="/static/img/king.jpg" alt="..." class="img-circle king" width="200"></a>
+                        <br>
+                        <br>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Обо мне</h2>
+                <img src="/static/img/me150.jpg" alt="..." class="img-rounded">
+                <br>
+                <br>
+                <p>Меня зовут Денис. Я начинающий django-разработчик. И это моя первая страница с использованием <a href="https://www.djangoproject.com" target="_blank">данного фреймворка</a>. С моим первым опытом HTML/CSS верстки можно ознакомиться <a href="http://dedrumshop.esy.es" target="_blank">здесь</a>.</p>
+                <p>Помимо веб-разработки увлекаюсь музыкой, играю на барабанах. Подробнее об этом на просторах <a href="https://vk.com/naked_drummer" target="_blank">соцсетей</a>.</p>
+                <p>День рождения: {{ birth_date|date:'d E Y' }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Учеба</h2>
+                    <p>По образованию я инженер теплоэнергетик. Закончил Ульяновский Государственный Технический Университет.</p>
+                    <a href="http://www.ulstu.ru" target="_blank" class="btn btn-default btn-lg">Посетить сайт вуза</a>
+                    <a href="http://127.0.0.1:8000/education" class="btn btn-default btn-lg">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Работа</h2>
+                <p>На данный момент работаю в сфере строительства промышленных предприятий. Занимаюсь календарным, ресурсным и финансовым планированием проектов.</p>
+                <a href="http://127.0.0.1:8000/work" class="btn btn-default btn-lg">Подробнее</a>
+                <br>
+                <br>
+                <br>
+                <p><a href="mailto:de_drum@mymail.com">de_drum@mymail.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://vk.com/naked_drummer" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-vk fa-fw"></i> <span class="network-name">Vkontakte</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/dershov73" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/nakeddrummer91/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
